@@ -21,19 +21,12 @@
     "license": "MIT",
     "devDependencies": {
         "broccoli-asset-rev": "^2.4.2",
-        "broccoli-babel-transpiler": "^6.4.3",
-        "broccoli-funnel": "^2.0.1",
-        "broccoli-json-module": "^1.0.0",
-        "broccoli-merge-trees": "^3.0.0",
         "ember-ajax": "^3.0.0",
         "ember-cli": "^3.1.0",
         "ember-cli-app-version": "^3.2.0",
-        "ember-cli-babel": "^6.6.0",
         "ember-cli-dependency-checker": "^2.0.0",
-        "ember-cli-htmlbars": "^2.0.1",
         "ember-cli-htmlbars-inline-precompile": "^1.0.0",
         "ember-cli-inject-live-reload": "^1.4.0",
-        "ember-cli-less": "^1.5.4",
         "ember-cli-qunit": "^4.1.1",
         "ember-cli-release": "^1.0.0-beta.2",
         "ember-cli-sri": "^2.1.0",
@@ -55,7 +48,15 @@
     "keywords": [
         "ember-addon"
     ],
-    "dependencies": {},
+    "dependencies": {
+        "broccoli-babel-transpiler": "^6.4.3",
+        "broccoli-funnel": "^2.0.1",
+        "broccoli-json-module": "^1.0.0",
+        "broccoli-merge-trees": "^3.0.0",
+        "ember-cli-babel": "^6.6.0",
+        "ember-cli-htmlbars": "^2.0.1",
+        "ember-cli-less": "^1.5.4"
+    },
     "ember-addon": {
         "configPath": "tests/dummy/config"
     }
