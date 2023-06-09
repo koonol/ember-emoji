@@ -1,27 +1,30 @@
-import Helper from '@ember/component/helper';
-import { htmlSafe } from '@ember/string';
-import { assign } from '@ember/polyfills';
-import emojione from 'emojione';
+import Helper from "@ember/component/helper";
+import { htmlSafe } from "@ember/string";
+import { assign } from "@ember/polyfills";
+import emojione from "emojione";
 
 const SUPPORTED_OPTIONS = [
-    'greedyMatch',
-    'imageTitleTag',
-    'sprites',
-    'unicodeAlt',
-    'ascii'
+    "greedyMatch",
+    "imageTitleTag",
+    "sprites",
+    "unicodeAlt",
+    "ascii",
+    "toImage",
 ];
 
-const DEFAULTS = SUPPORTED_OPTIONS.reduce((acc, option) =>
-    Object.assign(acc, { [option]: emojione[option] }), {});
+const DEFAULTS = SUPPORTED_OPTIONS.reduce(
+    (acc, option) => Object.assign(acc, { [option]: emojione[option] }),
+    {}
+);
 
 export function emojiParse([input], options) {
     if (!input) {
-        return '';
+        return "";
     }
 
     options = assign({}, DEFAULTS, options);
 
-    SUPPORTED_OPTIONS.forEach(option => {
+    SUPPORTED_OPTIONS.forEach((option) => {
         if (options.hasOwnProperty(option)) {
             emojione[option] = options[option];
         }
@@ -31,5 +34,5 @@ export function emojiParse([input], options) {
 }
 
 export default Helper.extend({
-    compute: emojiParse
+    compute: emojiParse,
 });
